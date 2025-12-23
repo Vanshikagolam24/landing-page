@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeless Watches | Luxury Collection</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Timeless</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search luxury watches...">
+            <button>🔍</button>
+        </div>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Brands</a></li>
+                <li><a href="#" class="cart-icon">Bag (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="product-container">
+        <section class="product-gallery">
+            <div class="main-img-container">
+                <img id="main-image" src="https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/26/1542852/1.jpg?5491" alt="Luxury Watch">
+            </div>
+            <div class="thumbnails">
+                <img onclick="changeImage(this.src)" src="https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/26/1542852/1.jpg?5491" alt="Thumb 1" class="active-thumb">
+                <img onclick="changeImage(this.src)" src="https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/26/1542852/2.jpg?5491" alt="Thumb 2">
+                <img onclick="changeImage(this.src)" src="https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/26/1542852/5.jpg?5491" alt="Thumb 3">
+                <img onclick="changeImage(this.src)" src="https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/26/1542852/7.jpg?5491" alt="Thumb 4">
+            </div>
+        </section>
+
+        <section class="product-details">
+            <p class="brand">Prestige Time Co.</p>
+            <h1>Elegant Luxury Watch</h1>
+            
+            <div class="ratings">
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="review-count">4.8/5 (256 reviews)</span>
+            </div>
+
+            <div class="price-box">
+                <span class="current-price">$499.99</span>
+                <span class="old-price">$799.99</span>
+                <span class="discount-tag">38% OFF</span>
+            </div>
+
+            <p class="description">
+                Crafted for the modern professional. This timepiece features a sapphire crystal face, 
+                Italian leather straps, and a precision Swiss movement.
+            </p>
+
+            <div class="actions">
+                <div class="quantity-selector">
+                    <button onclick="updateQty(-1)">-</button>
+                    <input type="number" id="quantity" value="1" min="1" readonly>
+                    <button onclick="updateQty(1)">+</button>
+                </div>
+                <button class="add-to-cart-btn" onclick="addToCart()">Add to Bag</button>
+            </div>
+
+            <div class="promotion-card">
+                <h3>Member Exclusive</h3>
+                <p>Sign up and get 10% off your first order.</p>
+                <button class="promo-link">Join Now</button>
+            </div>
+        </section>
+    </main>
+
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <h2>Secure Checkout</h2>
+            <p>Total Amount: <span id="checkout-price">$0.00</span></p>
+            <div class="payment-form">
+                <input type="text" placeholder="Card Number" maxlength="16">
+                <div class="form-row">
+                    <input type="text" placeholder="MM/YY">
+                    <input type="text" placeholder="CVC">
+                </div>
+                <button class="pay-now-btn" onclick="processPayment()">Confirm Payment</button>
+                <button class="cancel-btn" onclick="closeModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Timeless Watches. All rights reserved. Vanshika</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
